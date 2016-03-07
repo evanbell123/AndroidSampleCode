@@ -54,6 +54,11 @@ public class ApplicationTest extends ActivityInstrumentationTestCase2<MainActivi
 
         // TouchUtils handles the sync with the main thread internally
         TouchUtils.clickView(this, updateButton);
+        // Note, the following line was missing in an earlier version
+        //  of this program. It is definitely needed. If you don't wait
+        //  for the clickView() update to finish, the assert below
+        //  will fail.
+        getInstrumentation().waitForIdleSync();
 
         // displayed value should e 1 now.
         assertEquals("label not updated properly","UMKC",displayLabel.getText().toString());

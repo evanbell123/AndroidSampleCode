@@ -13,6 +13,8 @@ public class CoursGatewayTest extends AndroidTestCase {
     // Note, getContext() will return the context on the testing
     //   device. If you want a separate test context, see:
     //   http://stackoverflow.com/questions/4645461/isolatedcontext-vs-androidtestcase-getcontext
+    // setUp() method is called right before each test method (not
+    //   once for each group of test* method
     public void setUp(  )  {
         // CourseGateway depends on application context.
         // The dependency here is being satisfied with dependency
